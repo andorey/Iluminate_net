@@ -3,13 +3,13 @@
     background-color: steelblue;
     display: flex;
     /*margin: 1px;*/
-    border-radius: 8px;
+    border-radius: 12px 12px 5px 5px;
     justify-content: space-between;
     align-items: center;
     z-index: 1;
     position: fixed;
-    width: 93%;
-    padding: 2.5px;
+    width: 92.5%;
+    padding: 2px;
     box-shadow: 0 0 7px aliceblue;
 }
 
@@ -27,8 +27,24 @@
 
 .header div {
     color: ghostwhite;
-    font-size: 32px;
+    font-size: 1.9em;
     font-family: 'Cinzel', serif;;
     letter-spacing: 10px;
     font-weight: 700;
+}
+
+@media (prefers-reduced-motion:
+        no-preference) {
+    .header img:nth-child(3) {
+        animation:logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
