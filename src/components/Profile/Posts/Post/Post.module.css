@@ -1,0 +1,32 @@
+.post {
+    color: aliceblue;
+
+}
+
+.item {
+    background-color: steelblue;
+    margin-bottom: 2px;
+    margin-top: 1px;
+    border-radius: 8px;
+
+}
+
+.item div {
+    margin-left: 15px;
+}
+
+.item img {
+    width: 50px;
+    height: 70px;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+.photo {
+    display: flex;
+    align-items: center;
+}
+
+.like {
+    display: flex;
+}

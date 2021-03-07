@@ -18,15 +18,14 @@
 }
 
 .textArea button {
-    border-radius: 20px;
+    border-radius: 6px;
     box-shadow: 0 0 5px white;
     color: white;
     background-color: steelblue;
-    font-weight: 800;
-    font-size: 0.7em;
+    font-size: 0.9em;
     margin-left: 10px;
-    width: 100px;
-    padding: 10%;
+    /*width: 100px;*/
+    padding: 1%;
 }
 
 .textArea button:hover {

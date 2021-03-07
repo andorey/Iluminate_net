@@ -22,8 +22,6 @@ export function Profile() {
                 </div>
             </div>
             <Posts/>
-            <Posts/>
-            <Posts/>
         </div>
     )
 }
