@@ -12,7 +12,7 @@ export function Profile() {
             <div className={css.myPhoto}>
                 <div className={css.icon}>
                     <img
-                        src="https://clutch.ua/crops/ba1ddb/360x0/1/0/2019/05/17/Ns355MiU9gTtcUX1sI0h2JsX8rDxjwTv.jpeg"
+                        src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX29109486.jpg"
                         alt=""/>
                 </div>
                 <div className={css.aboutMe}>
