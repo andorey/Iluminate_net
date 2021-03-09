@@ -1,18 +1,21 @@
 import React from "react";
 import css from './Post.module.css';
 
-export const Post = () => {
+type propsType = {
+    message: string
+    likeCounter: number
+}
+
+export const Post = (props: propsType) => {
     return (
         <div className={css.post}>
             <div className={css.item}>
                 <div className={css.photo}>
-                    <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa-Rtjo86Y2Wo-a_WCxI-Eao3f-L9VbK9eGMoBSg-Pq5dhkaSd"
-                        alt=""/>
-                        See this post to test the possibility of writing a sentence
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa-Rtjo86Y2Wo-a_WCxI-Eao3f-L9VbK9eGMoBSg-Pq5dhkaSd" alt=""/>
+                    {props.message}
                 </div>
                 <div className={css.like}>
-                    <span>like :</span>
+                    <span>like : {props.likeCounter}</span>
 
                 </div>
             </div>
