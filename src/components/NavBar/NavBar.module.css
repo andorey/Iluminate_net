@@ -10,16 +10,12 @@
 }
 
 .item {
-    font-size: 1.1em;
+    font-size: 1.2em;
     text-shadow: 0 0 5px darkblue,
     0 0 7px black, 0 0 12px darkblue;
     /*margin-left: 20px;*/
     /*margin-top: 15px;*/
     margin: 15px auto;
-}
-
-.active {
-
 }
 
 .item a {
@@ -34,11 +30,11 @@
     0 0 13px ghostwhite;
 }
 
-/*.item a.activeLink {*/
-/*    font-size: 24px;*/
-/*    color: lime;*/
-/*    text-shadow: 0 0 1px deepskyblue,*/
-/*    0 0 4px black,*/
-/*    0 0 6px midnightblue,*/
-/*    0 0 10px midnightblue;*/
-/*}*/
+.item a.active {
+    font-size: 0.9em;
+    color: lime;
+    text-shadow: 0 0 1px deepskyblue,
+    0 0 6px black,
+    0 0 9px midnightblue,
+    0 0 13px lime;
+}
