@@ -1,0 +1,28 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    margin: 10px;
+
+}
+
+.dialogsItem {
+}
+
+.items {
+    margin-top: 10px;
+}
+
+.items a {
+    text-decoration: none;
+}
+
+.items a.active {
+    font-weight: bold;
+    color: darkblue;
+}
+
+.messages {
+}
+
+.textAreaButton {
+}

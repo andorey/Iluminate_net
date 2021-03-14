@@ -6,7 +6,7 @@ import {v1} from "uuid";
 
 export function Posts() {
     const [myPost, setMyPost] = useState([
-        {id: v1(), message: 'My first post', likeCounter: 0}
+        {id: v1(), message: '', likeCounter: 0}
     ])
 
     const [newPost, setNewPost] = useState('')

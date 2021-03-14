@@ -7,6 +7,8 @@ import {Footer} from "./components/Footer/Footer";
 import state from "./Redux/state";
 import {BrowserRouter, Route} from "react-router-dom";
 import {Dialogs} from "./components/Dialogs/Dialogs";
+import {News} from "./components/News/News";
+import {Music} from "./components/Music/Music";
 
 
 function App() {
@@ -18,8 +20,8 @@ function App() {
                 <div className='App-wrapper-content'>
                     <Route path={'/profile'} component={Profile}/>
                     <Route path={'/dialogs'} component={Dialogs}/>
-                    <Route path={'/news'} component={Dialogs}/>
-                    <Route path={'/music'} component={Dialogs}/>
+                    <Route path={'/news'} component={News}/>
+                    <Route path={'/music'} component={Music}/>
                     <Route path={'/settings'} component={Dialogs}/>
                 </div>
                 <Footer/>
