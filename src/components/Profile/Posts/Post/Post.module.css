@@ -28,7 +28,8 @@
 }
 
 .message {
-    width: 81%;
+    overflow-wrap: anywhere;
+    width: 90%;
     text-align: left;
 }
 

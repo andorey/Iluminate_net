@@ -1,32 +1,28 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import css from './Dialogs.module.css';
-import {v1} from 'uuid';
+import {Dialog} from "./Dialog/Dialog";
+import {Messages} from "./Messages/Messages";
+
 
 export function Dialogs() {
+    const dialogs = [
+        {id: 0, name: 'Mask', message: ['hello!', 'how are you?', 'what you want?']},
+        {id: 1, name: 'Wozniak', message: ['Give me you phone!', 'What is up?', 'Bye!']},
+        {id: 2, name: 'Jobs', message: ['Give me my apple', 'Howdy', 'Remember about death']},
+        {id: 3, name: 'Gates', message: ['Hey, close the window', 'I new it', 'Forgot it']},
+        {id: 4, name: 'Allen', message: ['What could I do?', 'Follow me', 'I got it']},
+    ]
+
+    let dialogsElements = dialogs.map( el => <Dialog name={el.name} id={el.id}/>);
+    let messagesElements = dialogs.map( el => <Messages message={el.message} /> )
+
     return (
         <div className={css.dialogs}>
             <div className={css.dialogsItem}>
-                <div className={css.items}>
-                    <NavLink to='/dialogs/0' className={css.links} activeClassName={css.active}>Mask</NavLink>
-                </div>
-                <div className={css.items}>
-                    <NavLink to='/dialogs/1' className={css.links} activeClassName={css.active}>Wozniak</NavLink>
-                </div>
-                <div className={css.items}>
-                    <NavLink to='/dialogs/2' className={css.links} activeClassName={css.active}>Jobs</NavLink>
-                </div>
-                <div className={css.items}>
-                    <NavLink to='/dialogs/3' className={css.links} activeClassName={css.active}>Gates</NavLink>
-                </div>
-                <div className={css.items}>
-                    <NavLink to='/dialogs/4' className={css.links} activeClassName={css.active}>Allen</NavLink>
-                </div>
+                {dialogsElements}
             </div>
             <div className={css.messages}>
-                <div className={css.message}> hello! </div>
-                <div className={css.message}> how are you?  </div>
-                <div className={css.message}> what do you want? </div>
+                {messagesElements}
             </div>
         </div>
     )

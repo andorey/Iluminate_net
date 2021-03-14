@@ -1,10 +1,14 @@
 import React from "react";
 import css from './Messages.module.css';
 
-export function Messages() {
+type messagesType ={
+    message: Array<string>
+}
+
+export function Messages(props: messagesType) {
     return (
         <div className={css.messages}>
-            Message
+            {props.message.map( el =>  <div> {el} </div> )}
         </div>
     )
 }

@@ -12,6 +12,7 @@ import {Music} from "./components/Music/Music";
 
 
 function App() {
+
     return (
         <BrowserRouter>
             <div className="App">
@@ -22,7 +23,7 @@ function App() {
                     <Route path={'/dialogs'} component={Dialogs}/>
                     <Route path={'/news'} component={News}/>
                     <Route path={'/music'} component={Music}/>
-                    <Route path={'/settings'} component={Dialogs}/>
+                    <Route path={'/settings'} component={()=> <div>Ok</div>}/>
                 </div>
                 <Footer/>
             </div>
