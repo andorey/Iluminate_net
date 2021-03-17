@@ -9,9 +9,12 @@ type dialogsElementType = {
 }
 
 export function Dialog(props: dialogsElementType) {
+
+    let path = '/dialogs/' + props.id;
+
     return (
         <div className={css.item}>
-            <NavLink to={'/dialogs/' + props.id} className={css.link} activeClassName={css.active}>
+            <NavLink to={path} className={css.link} activeClassName={css.active}>
                 {props.name}
             </NavLink>
         </div>

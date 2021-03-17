@@ -5,6 +5,7 @@
     /*margin: 1px;*/
     border-radius: 12px 12px 5px 5px;
     justify-content: space-between;
+    text-shadow: 1px 1px 10px black;
     align-items: center;
     z-index: 1;
     position: fixed;
