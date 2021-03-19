@@ -31,6 +31,8 @@ export function Posts() {
         }
     }
 
+    const myPosts = myPost.map( el => <Post key={el.id} message={el.message} likeCounter={el.likeCounter} /> )
+
 
     return(
         <div className={css.posts}>
@@ -42,9 +44,7 @@ export function Posts() {
                 />
                 <button onClick={ addMyPostButton }>Add Post</button>
             </div>
-            {
-                myPost.map( el => <Post key={el.id} message={el.message} likeCounter={el.likeCounter} /> )
-            }
+            { myPosts }
         </div>
     )
 }
