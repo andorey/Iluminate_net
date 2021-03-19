@@ -2,7 +2,7 @@ import React from "react";
 import css from './ProfileInfo.module.css'
 
 type aboutMyType = {
-    arrayAboutMe: Array<string>
+    arrayAboutMe: string[]
 }
 
 export function ProfileInfo(props: aboutMyType) {
@@ -19,9 +19,6 @@ export function ProfileInfo(props: aboutMyType) {
                 </div>
                 <div className={css.aboutMe}>
                     {informationAboutMe}
-                    {/*I am JS & TS Developer. <br/>*/}
-                    {/*And I think that React is very cool framework! <br/>*/}
-                    {/*If you don't believe me... You're right too*/}
                 </div>
             </div>
         </div>

@@ -27,6 +27,7 @@ export function Posts() {
     const onKeyPressAddPost = (e: KeyboardEvent<HTMLTextAreaElement>) =>{
         if (e.key === 'Enter' && newPost.trim()) {
             addMyPost(newPost.trim())
+            e.preventDefault();
             setNewPost('')
         }
     }
@@ -38,7 +39,7 @@ export function Posts() {
         <div className={css.posts}>
             <div className={css.textArea}>
                 <h3>My posts :</h3>
-                <textarea value={newPost}
+                <textarea value={ newPost }
                           onChange={ onChangePost }
                           onKeyPress={onKeyPressAddPost}
                 />
