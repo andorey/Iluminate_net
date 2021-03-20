@@ -2,13 +2,13 @@ import React from "react";
 import css from './Post.module.css';
 import skeleton from '../../../Images/illuminate_skeleton.jpg';
 
-type propsType = {
+type postType = {
     key: string
     message: string
     likeCounter: number
 }
 
-export function Post(props: propsType) {
+export function Post(props: postType) {
     if(props.message.trim() === ''){
         return <div className={css.post}/>
     }
