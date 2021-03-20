@@ -1,10 +1,13 @@
+import {v1} from "uuid";
+
 type PostsType = {
-    id: number
+    id: string
     post: string
     likesCount: number
 }
 type ProfilePageType = {
     posts: PostsType[]
+    aboutMe: string[]
 }
 type DialogsType = {
     id: number
@@ -29,28 +32,33 @@ type RootStateTypes = {
 let state: RootStateTypes = {
     profilePage: {
         posts: [
-            {id: 1, post: 'How about you?', likesCount: 5},
-            {id: 2, post: 'I go to bed, what go you think?', likesCount: 10},
-            {id: 3, post: 'I like React and you?', likesCount: 7},
-            {id: 4, post: 'I try change location data props', likesCount: 18},
-            {id: 5, post: 'Do you want how old are you?', likesCount: 4},
+            {id: v1(), post: 'How about you?', likesCount: 5},
+            {id: v1(), post: 'I go to bed, what go you think?', likesCount: 10},
+            {id: v1(), post: 'I like React and you?', likesCount: 7},
+            {id: v1(), post: 'I try change location data props', likesCount: 18},
+            {id: v1(), post: 'Do you want how old are you?', likesCount: 4},
+        ],
+        aboutMe: [
+            'I am JS & TS Developer.',
+            'And I think that React is very cool framework!',
+            'If you don\'t believe me... You\'re right too'
         ]
     },
     dialogsPage: {
         dialogs: [
-            {id: 1, name: 'Andrew'},
-            {id: 2, name: 'Dimych'},
-            {id: 3, name: 'Alex'},
-            {id: 4, name: 'Colin'},
-            {id: 5, name: 'Agnieszka'},
+            {id: 0, name: 'Mask'},
+            {id: 1, name: 'Wozniak'},
+            {id: 2, name: 'Jobs'},
+            {id: 3, name: 'Gates'},
+            {id: 4, name: 'Allen'},
         ],
 
         messages: [
-            {id: 1, message: 'Hi, how are you?'},
-            {id: 2, message: "Are you O'k?"},
-            {id: 3, message: 'Good night my friends. I go to bed'},
-            {id: 4, message: 'To go shopping during day'},
-            {id: 5, message: 'She is do not know where I live'},
+            {id: 0, message: 'what you want?'},
+            {id: 1, message: 'Give me you phone!'},
+            {id: 2, message: 'Remember about death'},
+            {id: 3, message: 'Hey, close the window'},
+            {id: 4, message: 'What could I do?'},
         ],
     },
     sidebar: {}

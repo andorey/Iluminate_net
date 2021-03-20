@@ -1,12 +1,12 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from "react";
+import React, {ChangeEvent, KeyboardEvent} from "react";
 import css from './Posts.module.css';
 import {Post} from "./Post/Post";
-import {v1} from "uuid";
+
 
 type postType = {
     id: string
-    message: string
-    likeCounter: number
+    post: string
+    likesCount: number
 }
 
 type propsType = {
@@ -15,38 +15,16 @@ type propsType = {
     onChangePost: (e: ChangeEvent<HTMLTextAreaElement>)=> void
     onKeyPressAddPost: (e: KeyboardEvent<HTMLTextAreaElement>) => void
     addMyPostButton: () => void
+    addLikes: (id: string) => void
 }
 
 export function Posts(props: propsType) {
 
-    // const [newPost, setNewPost] = useState('')
-    //
-    // const onChangePost = (e: ChangeEvent<HTMLTextAreaElement>) => setNewPost(e.currentTarget.value)
-    //
-    // const onKeyPressAddPost = (e: KeyboardEvent<HTMLTextAreaElement>) =>{
-    //     if (e.key === 'Enter' && newPost.trim()) {
-    //         addMyPost(newPost.trim())
-    //         e.preventDefault();
-    //         setNewPost('')
-    //     }
-    // }
-    //
-    // const [myPosts, setMyPosts] = useState([
-    //     {id: v1(), message: 'My first post', likeCounter: 5}
-    // ])
-    //
-    // const addMyPost = (value: string) =>{
-    //     const newMyPost = {id: v1(), message: value, likeCounter: 0}
-    //     const addMyPost = [newMyPost ,...myPosts]
-    //     setMyPosts(addMyPost)
-    // }
-    //
-    // const addMyPostButton = () =>{
-    //     addMyPost(newPost)
-    //     setNewPost('')
-    // }
-
-    const myPost = props.myPosts.map( el => <Post key={el.id} message={el.message} likeCounter={el.likeCounter} /> )
+    const myPost = props.myPosts.map( el =>{
+            const upDataLike = () => props.addLikes(el.id)
+            return <Post key={el.id} post={el.post} likesCount={el.likesCount} addLikes={upDataLike}/>
+            }
+        )
 
 
     return(

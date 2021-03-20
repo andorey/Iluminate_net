@@ -4,24 +4,27 @@ import skeleton from '../../../Images/illuminate_skeleton.jpg';
 
 type postType = {
     key: string
-    message: string
-    likeCounter: number
+    post: string
+    likesCount: number
+    addLikes: () => void
 }
 
 export function Post(props: postType) {
-    if(props.message.trim() === ''){
+
+    if(props.post.trim() === ''){
         return <div className={css.post}/>
     }
+
 
     return (
         <div className={css.post}>
             <div className={css.item}>
                 <div className={css.photo}>
                     <img src={skeleton} alt=""/>
-                    <div className={css.message}> {props.message} </div>
+                    <div className={css.message}> {props.post} </div>
                 </div>
                 <div className={css.like} key={props.key}>
-                    <span>like : {props.likeCounter}</span>
+                    <span onClick={ props.addLikes }>like : {props.likesCount}</span>
                 </div>
             </div>
         </div>

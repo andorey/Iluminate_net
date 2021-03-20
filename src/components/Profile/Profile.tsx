@@ -4,16 +4,39 @@ import {Posts} from "./Posts/Posts";
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 import {v1} from "uuid";
 
-const aboutMe = [
-    'I am JS & TS Developer.',
-    'And I think that React is very cool framework!',
-    'If you don\'t believe me... You\'re right too'
-]
+type PostsType = {
+    id: string
+    post: string
+    likesCount: number
+}
+type ProfilePageType = {
+    profile: PostsType[]
+    aboutMe: string[]
+}
 
 
-export function Profile() {
+
+export function Profile(props: ProfilePageType) {
+
+    const [myPosts, setMyPosts] = useState(props.profile)
+
+    const addMyPost = (value: string) =>{
+        const newMyPost = {id: v1(), post: value, likesCount: 0}
+        const addMyPost = [newMyPost ,...myPosts]
+        setMyPosts(addMyPost)
+    }
+
+    const addMyPostButton = () =>{
+        addMyPost(newPost)
+        setNewPost('')
+    }
 
     const [newPost, setNewPost] = useState('')
+
+    const addLikes = (id: string) => {
+        myPosts.map(el => el.id === id ? el.likesCount++ : el.likesCount)
+        setMyPosts([...myPosts])
+    }
 
     const onChangePost = (e: ChangeEvent<HTMLTextAreaElement>) => setNewPost(e.currentTarget.value)
 
@@ -25,29 +48,15 @@ export function Profile() {
         }
     }
 
-    const [myPosts, setMyPosts] = useState([
-        {id: v1(), message: 'My first post', likeCounter: 5}
-    ])
-
-    const addMyPost = (value: string) =>{
-        const newMyPost = {id: v1(), message: value, likeCounter: 0}
-        const addMyPost = [newMyPost ,...myPosts]
-        setMyPosts(addMyPost)
-    }
-
-    const addMyPostButton = () =>{
-        addMyPost(newPost)
-        setNewPost('')
-    }
-
     return (
         <div className={css.profile}>
-            <ProfileInfo arrayAboutMe={aboutMe}/>
+            <ProfileInfo arrayAboutMe={props.aboutMe}/>
             <Posts onChangePost={onChangePost}
                    onKeyPressAddPost={onKeyPressAddPost}
                    addMyPostButton={addMyPostButton}
                    newPost={newPost}
                    myPosts={myPosts}
+                   addLikes={addLikes}
             />
         </div>
     )
