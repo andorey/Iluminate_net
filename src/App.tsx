@@ -24,7 +24,10 @@ function App() {
                         <Profile profile={state.profilePage.posts}
                                  aboutMe={state.profilePage.aboutMe}/>
                     </Route>
-                    <Route path={'/dialogs'}> <Dialogs /> </Route>
+                    <Route path={'/dialogs'}>
+                        <Dialogs dialogs={state.dialogsPage.dialogs}
+                                 messages={state.dialogsPage.messages}/>
+                    </Route>
                     <Route path={'/news'} render={ () => <News /> }/>
                     <Route path={'/music'} render={ () => <Music /> }/>
                     <Route path={'/settings'} component={ () => <Settings /> }/>
