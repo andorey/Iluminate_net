@@ -8,11 +8,11 @@ type SettingsPageType = {
 }
 
 export function Settings(props: SettingsPageType) {
-    const mySettings = props.settingsData.settings.map(el => <img src={el} alt='' /> )
+    const mySettings = props.settingsData.settings.map( el => <img src={el} alt='' /> )
 
     return (
         <div>
-            <div>Ok</div>
+            <div>Danger! Keep out!</div>
             {mySettings}
         </div>
     )

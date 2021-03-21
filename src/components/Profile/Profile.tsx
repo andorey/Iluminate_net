@@ -13,6 +13,7 @@ type ProfilePageType = {
     posts: PostsType[]
     aboutMe: string[]
     myPhoto: string
+    photoPost: string
 }
 
 type ProfileDataType = {
@@ -61,6 +62,7 @@ export function Profile(props: ProfileDataType) {
                    newPost={newPost}
                    myPosts={myPosts}
                    addLikes={addLikes}
+                   photoPost={props.profileData.photoPost}
             />
         </div>
     )

@@ -1,10 +1,24 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import css from './NavBar.module.css';
+import {Friends} from "./Friends/Friends";
 
-export function NavBar() {
+type FriendsType = {
+    id: string
+    name: string
+    photo: string
+}
+type SideBarType = {
+    friends:FriendsType[]
+}
+type DataFriendsType = {
+    dataFriends: SideBarType
+}
+
+
+export function NavBar(props: DataFriendsType) {
     return (
-        <div className={`${css.nav} ${css.active}`}>
+        <div className={`${css.nav}`}>
             <div className={`${css.item}`}>
                 <NavLink to='/profile' className={css.links} activeClassName={css.active}>Profile</NavLink>
             </div>
@@ -20,6 +34,7 @@ export function NavBar() {
             <div className={css.item}>
                 <NavLink to='/settings' className={css.links} activeClassName={css.active}>Settings</NavLink>
             </div>
+            <Friends dataFriends={props.dataFriends}/>
         </div>
     )
 }

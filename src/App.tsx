@@ -19,6 +19,7 @@ type ProfilePageType = {
     posts: PostsType[]
     aboutMe: string[]
     myPhoto: string
+    photoPost: string
 }
 type DialogsType = {
     id: string
@@ -32,9 +33,14 @@ type DialogsPageType = {
     dialogs: DialogsType[]
     messages: MessagesType[]
 }
-
-type SidebarType = {}
-
+type FriendsType = {
+    id: string
+    name: string
+    photo: string
+}
+type SideBarType = {
+    friends:FriendsType[]
+}
 type NewsType = {
     news: string[]
 }
@@ -47,7 +53,7 @@ type SettingsType = {
 type RootStateTypes = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
-    sidebar: SidebarType
+    sideBar: SideBarType
     newsPage: NewsType
     musicPage: MusicType
     settingsPage: SettingsType
@@ -62,14 +68,10 @@ function App(props: StateType) {
         <BrowserRouter>
             <div className="App">
                 <Header/>
-                <NavBar/>
+                <NavBar dataFriends={props.state.sideBar}/>
                 <div className='App-wrapper-content'>
-                    <Route path={'/profile'}>
-                        <Profile profileData={props.state.profilePage}/>
-                    </Route>
-                    <Route path={'/dialogs'}>
-                        <Dialogs dialogsData={props.state.dialogsPage} />
-                    </Route>
+                    <Route path={'/profile'}> <Profile profileData={props.state.profilePage} /> </Route>
+                    <Route path={'/dialogs'}> <Dialogs dialogsData={props.state.dialogsPage} /> </Route>
                     <Route path={'/news'} render={ () => <News newsData={props.state.newsPage}/> }/>
                     <Route path={'/music'} render={ () => <Music musicData={props.state.musicPage}/> }/>
                     <Route path={'/settings'} component={ () => <Settings settingsData={props.state.settingsPage}/> }/>

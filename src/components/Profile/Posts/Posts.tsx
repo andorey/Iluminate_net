@@ -11,6 +11,7 @@ type PostType = {
 
 type PropsType = {
     newPost: string
+    photoPost: string
     myPosts: PostType[]
     onChangePost: (e: ChangeEvent<HTMLTextAreaElement>)=> void
     onKeyPressAddPost: (e: KeyboardEvent<HTMLTextAreaElement>) => void
@@ -22,7 +23,11 @@ export function Posts(props: PropsType) {
 
     const myPost = props.myPosts.map( el =>{
             const upDataLike = () => props.addLikes(el.id)
-            return <Post key={el.id} post={el.post} likesCount={el.likesCount} addLikes={upDataLike}/>
+            return <Post key={el.id}
+                         post={el.post}
+                         likesCount={el.likesCount}
+                         addLikes={upDataLike}
+                         photoPost={props.photoPost}/>
             }
         )
 
