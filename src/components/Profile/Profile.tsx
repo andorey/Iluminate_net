@@ -12,8 +12,8 @@ type PostsType = {
 type ProfilePageType = {
     profile: PostsType[]
     aboutMe: string[]
+    myPhoto: string
 }
-
 
 
 export function Profile(props: ProfilePageType) {
@@ -50,7 +50,8 @@ export function Profile(props: ProfilePageType) {
 
     return (
         <div className={css.profile}>
-            <ProfileInfo arrayAboutMe={props.aboutMe}/>
+            <ProfileInfo arrayAboutMe={props.aboutMe}
+                         image={props.myPhoto}/>
             <Posts onChangePost={onChangePost}
                    onKeyPressAddPost={onKeyPressAddPost}
                    addMyPostButton={addMyPostButton}

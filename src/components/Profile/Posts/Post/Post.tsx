@@ -9,6 +9,7 @@ type postType = {
     addLikes: () => void
 }
 
+
 export function Post(props: postType) {
 
     if(props.post.trim() === ''){

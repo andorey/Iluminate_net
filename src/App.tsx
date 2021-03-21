@@ -22,7 +22,8 @@ function App() {
                 <div className='App-wrapper-content'>
                     <Route path={'/profile'}>
                         <Profile profile={state.profilePage.posts}
-                                 aboutMe={state.profilePage.aboutMe}/>
+                                 aboutMe={state.profilePage.aboutMe}
+                                 myPhoto={state.profilePage.myPhoto}/>
                     </Route>
                     <Route path={'/dialogs'}>
                         <Dialogs dialogs={state.dialogsPage.dialogs}

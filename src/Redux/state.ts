@@ -8,6 +8,7 @@ type PostsType = {
 type ProfilePageType = {
     posts: PostsType[]
     aboutMe: string[]
+    myPhoto: string
 }
 type DialogsType = {
     id: number
@@ -42,7 +43,8 @@ let state: RootStateTypes = {
             'I am JS & TS Developer.',
             'And I think that React is very cool framework!',
             'If you don\'t believe me... You\'re right too'
-        ]
+        ],
+        myPhoto: "https://clutch.ua/crops/ba1ddb/360x0/1/0/2019/05/17/Ns355MiU9gTtcUX1sI0h2JsX8rDxjwTv.jpeg"
     },
     dialogsPage: {
         dialogs: [
