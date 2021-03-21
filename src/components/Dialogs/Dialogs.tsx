@@ -4,11 +4,11 @@ import {Dialog} from "./Dialog/Dialog";
 import {Messages} from "./Messages/Messages";
 
 type DialogsType = {
-    id: number
+    id: string
     name: string
 }
 type MessagesType = {
-    id: number
+    id: string
     message: string
 }
 type DialogsPageType = {

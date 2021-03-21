@@ -11,11 +11,11 @@ type ProfilePageType = {
     myPhoto: string
 }
 type DialogsType = {
-    id: number
+    id: string
     name: string
 }
 type MessagesType = {
-    id: number
+    id: string
     message: string
 }
 type DialogsPageType = {
@@ -48,19 +48,19 @@ let state: RootStateTypes = {
     },
     dialogsPage: {
         dialogs: [
-            {id: 0, name: 'Mask'},
-            {id: 1, name: 'Wozniak'},
-            {id: 2, name: 'Jobs'},
-            {id: 3, name: 'Gates'},
-            {id: 4, name: 'Allen'},
+            {id: v1(), name: 'Mask'},
+            {id: v1(), name: 'Wozniak'},
+            {id: v1(), name: 'Jobs'},
+            {id: v1(), name: 'Gates'},
+            {id: v1(), name: 'Allen'},
         ],
 
         messages: [
-            {id: 0, message: 'what you want?'},
-            {id: 1, message: 'Give me you phone!'},
-            {id: 2, message: 'Remember about death'},
-            {id: 3, message: 'Hey, close the window'},
-            {id: 4, message: 'What could I do?'},
+            {id: v1(), message: 'what you want?'},
+            {id: v1(), message: 'Give me you phone!'},
+            {id: v1(), message: 'Remember about death'},
+            {id: v1(), message: 'Hey, close the window'},
+            {id: v1(), message: 'What could I do?'},
         ],
     },
     sidebar: {}
