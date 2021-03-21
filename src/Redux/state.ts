@@ -1,4 +1,5 @@
 import {v1} from "uuid";
+import img from '../components/Images/illuminate_skeleton.jpg'
 
 type PostsType = {
     id: string
@@ -24,10 +25,22 @@ type DialogsPageType = {
 }
 type SidebarType = {}
 
+type NewsType = {
+    news: string[]
+}
+type MusicType = {
+    music: string[]
+}
+type SettingsType = {
+    settings: string[]
+}
 type RootStateTypes = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
     sidebar: SidebarType
+    newsPage: NewsType
+    musicPage: MusicType
+    settingsPage: SettingsType
 }
 
 let state: RootStateTypes = {
@@ -63,7 +76,22 @@ let state: RootStateTypes = {
             {id: v1(), message: 'What could I do?'},
         ],
     },
-    sidebar: {}
+    sidebar: {},
+    newsPage: {
+        news: [
+            "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX29109486.jpg",
+        ],
+    },
+    musicPage: {
+        music: [
+            "https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/e9/65/2b/e9652b87-a82b-04f9-661c-0c779c46abe5/source/500x500bb.jpg",
+        ]
+    },
+    settingsPage: {
+        settings: [
+            img,
+        ]
+    }
 }
 
 export default state;

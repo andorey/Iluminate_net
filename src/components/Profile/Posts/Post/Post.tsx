@@ -2,7 +2,7 @@ import React from "react";
 import css from './Post.module.css';
 import skeleton from '../../../Images/illuminate_skeleton.jpg';
 
-type postType = {
+type PostType = {
     key: string
     post: string
     likesCount: number
@@ -10,7 +10,7 @@ type postType = {
 }
 
 
-export function Post(props: postType) {
+export function Post(props: PostType) {
 
     if(props.post.trim() === ''){
         return <div className={css.post}/>

@@ -15,11 +15,14 @@ type DialogsPageType = {
     dialogs: DialogsType[]
     messages: MessagesType[]
 }
+type DialogsDataType = {
+    dialogsData: DialogsPageType
+}
 
-export function Dialogs(props: DialogsPageType) {
+export function Dialogs(props: DialogsDataType) {
 
-    let dialogsElements = props.dialogs.map( el => <Dialog name={el.name} id={el.id}/> );
-    let messagesElements = props.messages.map( el => <Messages message={el.message} /> );
+    let dialogsElements = props.dialogsData.dialogs.map( el => <Dialog name={el.name} id={el.id}/> );
+    let messagesElements = props.dialogsData.messages.map( el => <Messages message={el.message} /> );
 
 
     return (

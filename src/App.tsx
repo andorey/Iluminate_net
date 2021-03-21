@@ -35,16 +35,28 @@ type DialogsPageType = {
 
 type SidebarType = {}
 
+type NewsType = {
+    news: string[]
+}
+type MusicType = {
+    music: string[]
+}
+type SettingsType = {
+    settings: string[]
+}
 type RootStateTypes = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
     sidebar: SidebarType
+    newsPage: NewsType
+    musicPage: MusicType
+    settingsPage: SettingsType
 }
-type stateType = {
+type StateType = {
     state: RootStateTypes
 }
 
-function App(props: stateType) {
+function App(props: StateType) {
 
     return (
         <BrowserRouter>
@@ -53,17 +65,14 @@ function App(props: stateType) {
                 <NavBar/>
                 <div className='App-wrapper-content'>
                     <Route path={'/profile'}>
-                        <Profile profile={props.state.profilePage.posts}
-                                 aboutMe={props.state.profilePage.aboutMe}
-                                 myPhoto={props.state.profilePage.myPhoto}/>
+                        <Profile profileData={props.state.profilePage}/>
                     </Route>
                     <Route path={'/dialogs'}>
-                        <Dialogs dialogs={props.state.dialogsPage.dialogs}
-                                 messages={props.state.dialogsPage.messages}/>
+                        <Dialogs dialogsData={props.state.dialogsPage} />
                     </Route>
-                    <Route path={'/news'} render={ () => <News /> }/>
-                    <Route path={'/music'} render={ () => <Music /> }/>
-                    <Route path={'/settings'} component={ () => <Settings /> }/>
+                    <Route path={'/news'} render={ () => <News newsData={props.state.newsPage}/> }/>
+                    <Route path={'/music'} render={ () => <Music musicData={props.state.musicPage}/> }/>
+                    <Route path={'/settings'} component={ () => <Settings settingsData={props.state.settingsPage}/> }/>
                 </div>
                 <Footer/>
             </div>

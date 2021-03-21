@@ -1,10 +1,18 @@
 import React from "react";
 import css from './News.module.css';
 
-export function News() {
+type NewsType = {
+    news: string[]
+}
+
+type NewsPageType = {
+    newsData: NewsType
+}
+
+export function News(props: NewsPageType) {
+    const myNews = props.newsData.news.map(el => <img src={el} alt=""/> )
+
     return (
-        <div>
-            <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX29109486.jpg" alt=""/>
-        </div>
+        <div>{myNews}</div>
     )
 }

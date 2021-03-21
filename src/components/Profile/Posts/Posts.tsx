@@ -3,22 +3,22 @@ import css from './Posts.module.css';
 import {Post} from "./Post/Post";
 
 
-type postType = {
+type PostType = {
     id: string
     post: string
     likesCount: number
 }
 
-type propsType = {
+type PropsType = {
     newPost: string
-    myPosts: postType[]
+    myPosts: PostType[]
     onChangePost: (e: ChangeEvent<HTMLTextAreaElement>)=> void
     onKeyPressAddPost: (e: KeyboardEvent<HTMLTextAreaElement>) => void
     addMyPostButton: () => void
     addLikes: (id: string) => void
 }
 
-export function Posts(props: propsType) {
+export function Posts(props: PropsType) {
 
     const myPost = props.myPosts.map( el =>{
             const upDataLike = () => props.addLikes(el.id)

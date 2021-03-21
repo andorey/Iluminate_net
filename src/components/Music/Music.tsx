@@ -1,10 +1,17 @@
 import React from "react";
 import css from './Music.module.css';
 
-export function Music() {
+type MusicType = {
+    music: string[]
+}
+type MusicDataTpe = {
+    musicData: MusicType
+}
+
+export function Music(props: MusicDataTpe) {
+    const myMusic = props.musicData.music.map(el => <img src={el} alt=""/>)
+
     return (
-        <div className={css.music}>
-            <img src="https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/e9/65/2b/e9652b87-a82b-04f9-661c-0c779c46abe5/source/500x500bb.jpg" alt=""/>
-        </div>
+        <div className={css.music}>{myMusic}</div>
     )
 }

@@ -1,12 +1,12 @@
 import React from "react";
 import css from './ProfileInfo.module.css'
 
-type aboutMyType = {
+type AboutMyType = {
     arrayAboutMe: string[]
     image: string
 }
 
-export function ProfileInfo(props: aboutMyType) {
+export function ProfileInfo(props: AboutMyType) {
     const informationAboutMe = props.arrayAboutMe.map( el => <div>{el}</div> )
 
     const styleMyImage = (image: string) => ({

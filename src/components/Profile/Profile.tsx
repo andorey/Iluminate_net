@@ -10,15 +10,18 @@ type PostsType = {
     likesCount: number
 }
 type ProfilePageType = {
-    profile: PostsType[]
+    posts: PostsType[]
     aboutMe: string[]
     myPhoto: string
 }
 
+type ProfileDataType = {
+    profileData: ProfilePageType
+}
 
-export function Profile(props: ProfilePageType) {
+export function Profile(props: ProfileDataType) {
 
-    const [myPosts, setMyPosts] = useState(props.profile)
+    const [myPosts, setMyPosts] = useState(props.profileData.posts)
 
     const addMyPost = (value: string) =>{
         const newMyPost = {id: v1(), post: value, likesCount: 0}
@@ -50,8 +53,8 @@ export function Profile(props: ProfilePageType) {
 
     return (
         <div className={css.profile}>
-            <ProfileInfo arrayAboutMe={props.aboutMe}
-                         image={props.myPhoto}/>
+            <ProfileInfo arrayAboutMe={props.profileData.aboutMe}
+                         image={props.profileData.myPhoto}/>
             <Posts onChangePost={onChangePost}
                    onKeyPressAddPost={onKeyPressAddPost}
                    addMyPostButton={addMyPostButton}
