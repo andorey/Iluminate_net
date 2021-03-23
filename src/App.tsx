@@ -9,55 +9,8 @@ import {Dialogs} from "./components/Dialogs/Dialogs";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings";
+import {RootStateTypes} from './redux/state'
 
-type PostsType = {
-    id: string
-    post: string
-    likesCount: number
-}
-type ProfilePageType = {
-    posts: PostsType[]
-    aboutMe: string[]
-    myPhoto: string
-    photoPost: string
-}
-type DialogsType = {
-    id: string
-    name: string
-}
-type MessagesType = {
-    id: string
-    message: string
-}
-type DialogsPageType = {
-    dialogs: DialogsType[]
-    messages: MessagesType[]
-}
-type FriendsType = {
-    id: string
-    name: string
-    photo: string
-}
-type SideBarType = {
-    friends:FriendsType[]
-}
-type NewsType = {
-    news: string[]
-}
-type MusicType = {
-    music: string[]
-}
-type SettingsType = {
-    settings: string[]
-}
-type RootStateTypes = {
-    profilePage: ProfilePageType
-    dialogsPage: DialogsPageType
-    sideBar: SideBarType
-    newsPage: NewsType
-    musicPage: MusicType
-    settingsPage: SettingsType
-}
 type StateType = {
     state: RootStateTypes
 }

@@ -1,8 +1,6 @@
 import React from "react";
+import {SettingsType} from "../redux/state";
 
-type SettingsType = {
-    settings: string[]
-}
 type SettingsPageType = {
     settingsData: SettingsType
 }

@@ -25,7 +25,7 @@ export function ProfileInfo(props: AboutMyType) {
         height: '100px',
         border: '3px solid steelblue',
         borderRadius: '90px 90px 10px 10px',
-        backgroundPosition: '0',
+        backgroundPosition: '20px 20px',
         backgroundImage: '',
         transition: 'all 0.7s',
         overflow: 'hidden'
@@ -39,14 +39,14 @@ export function ProfileInfo(props: AboutMyType) {
     return (
         <div>
             <div className={css.theme}>
-                <img src="https://images.wallpaperscraft.com/image/mountain_lake_nature_81057_2560x1080.jpg" alt=""/>
+                <img src="https://images.wallpaperscraft.com/image/mountain_lake_nature_81057_2560x1080.jpg" alt="" />
             </div>
             <div className={css.myPhoto}>
                 <div className={css.icon}
                      onMouseOver={() => setNewStyle(styleMyImage())}
                      onMouseOut={() => setNewStyle(styleImage())}
                      style={newStyle}>
-                    <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX29109486.jpg" alt=""/>
+                    <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX29109486.jpg" alt="" />
                 </div>
                 <div className={css.aboutMe}>
                     {informationAboutMe}

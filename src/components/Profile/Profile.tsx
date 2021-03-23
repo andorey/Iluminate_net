@@ -3,18 +3,7 @@ import css from './Profile.module.css';
 import {Posts} from "./Posts/Posts";
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 import {v1} from "uuid";
-
-type PostsType = {
-    id: string
-    post: string
-    likesCount: number
-}
-type ProfilePageType = {
-    posts: PostsType[]
-    aboutMe: string[]
-    myPhoto: string
-    photoPost: string
-}
+import {ProfilePageType} from "../../redux/state";
 
 type ProfileDataType = {
     profileData: ProfilePageType

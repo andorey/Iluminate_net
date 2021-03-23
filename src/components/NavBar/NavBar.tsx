@@ -2,15 +2,8 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import css from './NavBar.module.css';
 import {Friends} from "./Friends/Friends";
+import {SideBarType} from "../../redux/state";
 
-type FriendsType = {
-    id: string
-    name: string
-    photo: string
-}
-type SideBarType = {
-    friends:FriendsType[]
-}
 type DataFriendsType = {
     dataFriends: SideBarType
 }

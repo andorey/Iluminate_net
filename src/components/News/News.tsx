@@ -1,9 +1,6 @@
 import React from "react";
 import css from './News.module.css';
-
-type NewsType = {
-    news: string[]
-}
+import {NewsType} from "../../redux/state";
 
 type NewsPageType = {
     newsData: NewsType

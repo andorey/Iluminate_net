@@ -22,8 +22,7 @@ export function Friends(props: DataFriendsType) {
             <div className={css.friend} key={el.id}>
                 <div className={css.avatar}><img src={el.photo} alt=""/></div>
                 <span>{elName[0]}<br/>{elName[1]}</span>
-            </div>
-        )
+            </div> )
     })
 
     return (

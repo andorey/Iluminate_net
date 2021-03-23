@@ -1,9 +1,7 @@
 import React from "react";
 import css from './Music.module.css';
+import {MusicType} from "../../redux/state";
 
-type MusicType = {
-    music: string[]
-}
 type MusicDataTpe = {
     musicData: MusicType
 }

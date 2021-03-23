@@ -1,47 +1,47 @@
 import {v1} from 'uuid';
 import img from '../components/Images/illuminate_skeleton.jpg'
 
-type PostsType = {
+export type PostsType = {
     id: string
     post: string
     likesCount: number
 }
-type ProfilePageType = {
+export type ProfilePageType = {
     posts: PostsType[]
     aboutMe: string[]
     myPhoto: string
     photoPost: string
 }
-type DialogsType = {
+export type DialogsType = {
     id: string
     name: string
 }
-type MessagesType = {
+export type MessagesType = {
     id: string
     message: string
 }
-type DialogsPageType = {
+export type DialogsPageType = {
     dialogs: DialogsType[]
     messages: MessagesType[]
 }
-type NewsType = {
+export type NewsType = {
     news: string[]
 }
-type MusicType = {
+export type MusicType = {
     music: string[]
 }
-type SettingsType = {
+export type SettingsType = {
     settings: string[]
 }
-type FriendsType = {
+export type FriendsType = {
     id: string
     name: string
     photo: string
 }
-type SideBarType = {
+export type SideBarType = {
     friends: FriendsType[]
 }
-type RootStateTypes = {
+export type RootStateTypes = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
     newsPage: NewsType
