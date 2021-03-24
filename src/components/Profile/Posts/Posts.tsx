@@ -3,7 +3,7 @@ import css from './Posts.module.css';
 import {Post} from "./Post/Post";
 import {PostsType} from "../../../redux/state";
 
-type PropsType = {
+type AddPostsType = {
     newPost: string
     photoPost: string
     myPosts: PostsType[]
@@ -13,7 +13,7 @@ type PropsType = {
     addLikes: (id: string) => void
 }
 
-export function Posts(props: PropsType) {
+export function Posts(props: AddPostsType) {
 
     const myPost = props.myPosts.map( el =>{
             const upDataLike = () => props.addLikes(el.id)
@@ -24,7 +24,6 @@ export function Posts(props: PropsType) {
                          photoPost={props.photoPost}/>
             }
         )
-
 
     return(
         <div className={css.posts}>

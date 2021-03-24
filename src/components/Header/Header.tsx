@@ -1,12 +1,16 @@
 import React from "react";
 import css from './Header.module.css';
 
-export function Header() {
+type ImagesType = {
+    images: string[]
+}
+
+export function Header(props: ImagesType) {
     return (
         <div className={css.header}>
-            <img src="https://seeklogo.com/images/M/MASON-logo-6EC4494474-seeklogo.com.png" alt=""/>
+            <img src={props.images[0]} alt=""/>
             <div>Novus Ordo Seclorum</div>
-            <img src="https://github.com/andorey/social_net/blob/master/public/img/ill.png?raw=true" alt=""/>
+            <img src={props.images[1]} alt=""/>
         </div>
     )
 }

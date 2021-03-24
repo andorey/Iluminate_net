@@ -1,12 +1,33 @@
 import {v1} from 'uuid';
 import img from '../components/Images/illuminate_skeleton.jpg'
 
+export type StyleMyImageType = {
+    width: string
+    height: string
+    border: string
+    borderRadius: string
+    backgroundPosition: string
+    backgroundImage: string
+    transition: string
+    overflow: string
+}
+export type StyleImageType = {
+    width: string
+    height: string
+    border: string
+    borderRadius: string
+    backgroundPosition: string
+    backgroundImage: string
+    transition: string
+    overflow: string
+}
 export type PostsType = {
     id: string
     post: string
     likesCount: number
 }
 export type ProfilePageType = {
+    header: string[]
     posts: PostsType[]
     aboutMe: string[]
     myPhoto: string
@@ -50,8 +71,12 @@ export type RootStateTypes = {
     sideBar: SideBarType
 }
 
-let state: RootStateTypes = {
+export let state: RootStateTypes = {
     profilePage: {
+        header: [
+            'https://seeklogo.com/images/M/MASON-logo-6EC4494474-seeklogo.com.png',
+            'https://github.com/andorey/social_net/blob/master/public/img/ill.png?raw=true'
+        ],
         posts: [
             {id: v1(), post: 'How about you?', likesCount: 5},
             {id: v1(), post: 'I go to bed, what go you think?', likesCount: 10},
@@ -110,4 +135,26 @@ let state: RootStateTypes = {
     }
 }
 
-export default state;
+
+export const styleMyImage = () => ({
+    width: '100px',
+    height: '100px',
+    border: '3px solid silver',
+    borderRadius: '50%',
+    backgroundPosition: '-17px -15px',
+    backgroundSize: '140%',
+    backgroundImage: `url(${state.profilePage.myPhoto})`,
+    transition: 'all 0.7s',
+    overflow: 'hidden'
+})
+
+export const styleImage = () => ({
+    width: '100px',
+    height: '100px',
+    border: '3px solid steelblue',
+    borderRadius: '90px 90px 10px 10px',
+    backgroundPosition: '20px 20px',
+    backgroundImage: '',
+    transition: 'all 0.7s',
+    overflow: 'hidden'
+})

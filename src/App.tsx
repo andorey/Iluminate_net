@@ -20,14 +20,19 @@ function App(props: StateType) {
     return (
         <BrowserRouter>
             <div className="App">
-                <Header/>
+                <Header images={props.state.profilePage.header}/>
                 <NavBar dataFriends={props.state.sideBar}/>
                 <div className='App-wrapper-content'>
                     <Route path={'/profile'}> <Profile profileData={props.state.profilePage} /> </Route>
                     <Route path={'/dialogs'}> <Dialogs dialogsData={props.state.dialogsPage} /> </Route>
-                    <Route path={'/news'} render={ () => <News newsData={props.state.newsPage}/> }/>
-                    <Route path={'/music'} render={ () => <Music musicData={props.state.musicPage}/> }/>
-                    <Route path={'/settings'} component={ () => <Settings settingsData={props.state.settingsPage}/> }/>
+                    <Route path={'/news'}> <News newsData={props.state.newsPage} /> </Route>
+                    <Route path={'/music'}> <Music musicData={props.state.musicPage} /> </Route>
+                    <Route path={'/settings'}> <Settings settingsData={props.state.settingsPage} /> </Route>
+
+                    {/*Also you can use this methods*/}
+                    {/*<Route path={'/music'} render={ () => <Music musicData={props.state.musicPage}/> }/>*/}
+                    {/*<Route path={'/settings'} component={ () => <Settings settingsData={props.state.settingsPage}/> }/>*/}
+
                 </div>
                 <Footer/>
             </div>
