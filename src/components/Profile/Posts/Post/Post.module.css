@@ -20,6 +20,7 @@
     height: 70px;
     border-radius: 30px;
     margin: 10px;
+    user-select: none;
 }
 
 .photo {
@@ -36,4 +37,5 @@
 .like {
     display: flex;
     cursor: pointer;
+    user-select: none;
 }

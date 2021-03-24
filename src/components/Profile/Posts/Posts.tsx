@@ -1,18 +1,12 @@
 import React, {ChangeEvent, KeyboardEvent} from "react";
 import css from './Posts.module.css';
 import {Post} from "./Post/Post";
-
-
-type PostType = {
-    id: string
-    post: string
-    likesCount: number
-}
+import {PostsType} from "../../../redux/state";
 
 type PropsType = {
     newPost: string
     photoPost: string
-    myPosts: PostType[]
+    myPosts: PostsType[]
     onChangePost: (e: ChangeEvent<HTMLTextAreaElement>)=> void
     onKeyPressAddPost: (e: KeyboardEvent<HTMLTextAreaElement>) => void
     addMyPostButton: () => void

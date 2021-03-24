@@ -1,5 +1,5 @@
 import React from "react";
-import {SettingsType} from "../redux/state";
+import {SettingsType} from "../../redux/state";
 
 type SettingsPageType = {
     settingsData: SettingsType

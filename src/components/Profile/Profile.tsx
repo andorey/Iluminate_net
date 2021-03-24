@@ -34,7 +34,7 @@ export function Profile(props: ProfileDataType) {
     const onChangePost = (e: ChangeEvent<HTMLTextAreaElement>) => setNewPost(e.currentTarget.value)
 
     const onKeyPressAddPost = (e: KeyboardEvent<HTMLTextAreaElement>) =>{
-        if (e.key === 'Enter' && newPost.trim()) {
+        if ( !e.shiftKey && e.key === 'Enter' && newPost.trim() ) {
             addMyPost(newPost.trim())
             e.preventDefault();
             setNewPost('')
