@@ -73,10 +73,6 @@ export type RootStateTypes = {
 
 export let state: RootStateTypes = {
     profilePage: {
-        header: [
-            'https://seeklogo.com/images/M/MASON-logo-6EC4494474-seeklogo.com.png',
-            'https://github.com/andorey/social_net/blob/master/public/img/ill.png?raw=true'
-        ],
         posts: [
             {id: v1(), post: 'How about you?', likesCount: 5},
             {id: v1(), post: 'I go to bed, what go you think?', likesCount: 10},
@@ -88,6 +84,10 @@ export let state: RootStateTypes = {
             'I am JS & TS Developer.',
             'And I think that React is very cool framework!',
             'If you don\'t believe me... You\'re right too'
+        ],
+        header: [
+            'https://seeklogo.com/images/M/MASON-logo-6EC4494474-seeklogo.com.png',
+            'https://github.com/andorey/social_net/blob/master/public/img/ill.png?raw=true'
         ],
         myPhoto: 'https://clutch.ua/crops/ba1ddb/360x0/1/0/2019/05/17/Ns355MiU9gTtcUX1sI0h2JsX8rDxjwTv.jpeg',
         photoPost: img,
