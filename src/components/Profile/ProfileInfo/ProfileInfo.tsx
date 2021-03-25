@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import css from './ProfileInfo.module.css'
 import {Avatar} from "./Avatar/Avatar";
-import {styleImage, styleMyImage} from "../../../redux/state";
+import {CreateStyleImage, CreateStyleMyImage} from "../../../redux/state";
 
 type AboutMyType = {
     arrayAboutMe: string[]
@@ -10,7 +10,7 @@ type AboutMyType = {
 
 export function ProfileInfo(props: AboutMyType) {
 
-    let [newStyle, setNewStyle] = useState(styleImage())
+    let [newStyle, setNewStyle] = useState(CreateStyleImage())
 
     const informationAboutMe = props.arrayAboutMe.map(el => <div>{el}</div>)
 
@@ -23,8 +23,8 @@ export function ProfileInfo(props: AboutMyType) {
             <div className={css.myPhoto}>
                 <Avatar newStyle={newStyle}
                         setNewStyle={setNewStyle}
-                        styleMyImage={styleMyImage}
-                        styleImage={styleImage} />
+                        styleMyImage={CreateStyleMyImage}
+                        styleImage={CreateStyleImage} />
                 <div className={css.aboutMe}>
                     {informationAboutMe}
                 </div>

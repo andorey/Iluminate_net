@@ -11,20 +11,13 @@ type ProfileDataType = {
 
 export function Profile(props: ProfileDataType) {
 
-    //const [myPosts, setMyPosts] = useState(props.profileData.posts)
-    const [myPosts, setMyPosts] = useState([
-        {id: v1(), post: 'How about you?', likesCount: 5},
-        {id: v1(), post: 'I go to bed, what go you think?', likesCount: 10},
-        {id: v1(), post: 'I like React and you?', likesCount: 7},
-        {id: v1(), post: 'I try change location data props', likesCount: 18},
-        {id: v1(), post: 'Do you want how old are you?', likesCount: 4},
-    ])
+    const [myPosts, setMyPosts] = useState(props.profileData.posts)
 
 
     const addMyPost = (value: string) =>{
         const newMyPost = {id: v1(), post: value, likesCount: 0}
-        const addMyPost = [newMyPost ,...myPosts]
-        setMyPosts(addMyPost)
+        myPosts.unshift(newMyPost)
+        setMyPosts(myPosts)
     }
 
     const addMyPostButton = () =>{

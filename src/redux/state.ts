@@ -71,7 +71,7 @@ export type RootStateTypes = {
     sideBar: SideBarType
 }
 
-export let state: RootStateTypes = {
+export let _state: RootStateTypes = {
     profilePage: {
         posts: [
             {id: v1(), post: 'How about you?', likesCount: 5},
@@ -136,19 +136,19 @@ export let state: RootStateTypes = {
 }
 
 
-export const styleMyImage = () => ({
+export const CreateStyleMyImage = () => ({
     width: '100px',
     height: '100px',
     border: '3px solid silver',
     borderRadius: '50%',
     backgroundPosition: '-17px -15px',
     backgroundSize: '140%',
-    backgroundImage: `url(${state.profilePage.myPhoto})`,
+    backgroundImage: `url(${_state.profilePage.myPhoto})`,
     transition: 'all 0.7s',
     overflow: 'hidden'
 })
 
-export const styleImage = () => ({
+export const CreateStyleImage = () => ({
     width: '100px',
     height: '100px',
     border: '3px solid steelblue',
