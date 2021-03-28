@@ -1,16 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {RenderTree} from "./RenderTree";
 import {_state} from "./redux/state";
 
-ReactDOM.render(
-    <React.StrictMode>
-        <App state={_state}/>
-    </React.StrictMode>, document.querySelector('#root')
-);
-
+RenderTree(_state)
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

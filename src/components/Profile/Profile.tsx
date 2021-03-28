@@ -2,8 +2,7 @@ import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 import css from './Profile.module.css';
 import {Posts} from "./Posts/Posts";
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
-import {v1} from "uuid";
-import {ProfilePageType} from "../../redux/state";
+import {addLikes, addPost, ProfilePageType} from "../../redux/state";
 
 type ProfileDataType = {
     profileData: ProfilePageType
@@ -11,32 +10,18 @@ type ProfileDataType = {
 
 export function Profile(props: ProfileDataType) {
 
-    const [myPosts, setMyPosts] = useState(props.profileData.posts)
-
-
-    const addMyPost = (value: string) =>{
-        const newMyPost = {id: v1(), post: value, likesCount: 0}
-        myPosts.unshift(newMyPost)
-        setMyPosts(myPosts)
-    }
-
-    const addMyPostButton = () =>{
-        addMyPost(newPost)
-        setNewPost('')
-    }
-
     const [newPost, setNewPost] = useState('')
 
-    const addLikes = (id: string) => {
-        myPosts.map(el => el.id === id ? el.likesCount++ : el.likesCount)
-        setMyPosts([...myPosts])
+    const addMyPostButton = () =>{
+        addPost(newPost)
+        setNewPost('')
     }
 
     const onChangePost = (e: ChangeEvent<HTMLTextAreaElement>) => setNewPost(e.currentTarget.value)
 
     const onKeyPressAddPost = (e: KeyboardEvent<HTMLTextAreaElement>) =>{
         if ( !e.shiftKey && e.key === 'Enter' && newPost.trim() ) {
-            addMyPost(newPost.trim())
+            addPost(newPost.trim())
             e.preventDefault();
             setNewPost('')
         }
@@ -50,7 +35,7 @@ export function Profile(props: ProfileDataType) {
                    onKeyPressAddPost={onKeyPressAddPost}
                    addMyPostButton={addMyPostButton}
                    newPost={newPost}
-                   myPosts={myPosts}
+                   myPosts={props.profileData.posts}
                    addLikes={addLikes}
                    photoPost={props.profileData.photoPost}
             />

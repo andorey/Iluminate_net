@@ -1,5 +1,6 @@
 import {v1} from 'uuid';
 import img from '../components/Images/illuminate_skeleton.jpg'
+import {RenderTree} from "../RenderTree";
 
 export type StyleMyImageType = {
     width: string
@@ -133,6 +134,17 @@ export let _state: RootStateTypes = {
             {id: v1(), name: 'Paul Allen', photo: 'https://photos.geni.com/p13/5f/cc/8c/ef/5344483f7ccd950d/paul-allen_medium.jpg'},
         ]
     }
+}
+
+export const addPost = (value: string) => {
+    const post = {id: v1(), post: value, likesCount: 0}
+    _state.profilePage.posts.unshift(post)
+    RenderTree(_state)
+}
+
+export const addLikes = (id: string) => {
+    _state.profilePage.posts.map(el => el.id === id ? el.likesCount += 1 : el.likesCount)
+    RenderTree(_state)
 }
 
 
