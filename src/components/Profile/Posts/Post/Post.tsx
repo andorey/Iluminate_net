@@ -1,7 +1,7 @@
 import React from "react";
 import css from './Post.module.css';
 
-type PostType = {
+export type PostType = {
     key: string
     post: string
     likesCount: number
