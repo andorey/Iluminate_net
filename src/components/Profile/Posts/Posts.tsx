@@ -3,7 +3,7 @@ import css from './Posts.module.css';
 import {Post} from "./Post/Post";
 import {PostsType} from "../../../redux/state";
 
-type AddPostsType = {
+export type AddPostsType = {
     newPost: string
     photoPost: string
     myPosts: PostsType[]

@@ -14,9 +14,10 @@ const Template: Story<PostType> = (args) => <Post {...args} />;
 
 export const PostExample = Template.bind({});
 PostExample.args = {
+  key: '1',
   post: 'Hello how are you?',
   likesCount: 5,
-  addLikes: action('add new like'),
+  addLikes: action('add like'),
   photoPost: img,
 
 };

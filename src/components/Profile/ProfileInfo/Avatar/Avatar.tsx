@@ -3,7 +3,7 @@ import css from "../ProfileInfo.module.css";
 import {StyleImageType, StyleMyImageType} from "../../../../redux/state";
 
 
-type PropsStyleType = {
+export type PropsStyleType = {
     newStyle: StyleImageType | StyleMyImageType
     setNewStyle: Dispatch<SetStateAction<StyleImageType | StyleMyImageType>>
     styleMyImage: () => StyleMyImageType
