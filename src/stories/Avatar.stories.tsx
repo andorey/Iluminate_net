@@ -10,9 +10,8 @@ export default {
   component: Avatar
 } as Meta;
 
-const Template: Story<PropsStyleType> = (args) => <Avatar {...args} />;
-
-export const AvatarExample = Template.bind({});
+// const Template: Story<PropsStyleType> = (args) => <Avatar {...args} />;
+// export const AvatarExample = Template.bind({});
 
 
 export const AvatarExampleState = () => {
